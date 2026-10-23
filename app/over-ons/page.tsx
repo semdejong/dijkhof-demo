@@ -57,7 +57,7 @@ export default function OverOnsPage() {
             ["Eigen mensen", "Goed opgeleide en ervaren medewerkers, die voor u klaarstaan."],
             ["Eigen wagenpark", "Groene bestelbussen en een vrachtwagen met ons logo."],
           ].map(([titel, tekst]) => (
-            <article key={titel} className="rounded-3xl bg-white p-6 ring-1 ring-sand">
+            <article key={titel} className="h-full rounded-3xl bg-white p-6 ring-1 ring-sand">
               <h2 className="font-display text-2xl font-extrabold text-navy">{titel}</h2>
               <p className="mt-3">{tekst}</p>
             </article>

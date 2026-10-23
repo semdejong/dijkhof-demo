@@ -9,7 +9,7 @@ export default function PullQuote({
 }) {
   return (
     <section data-section={section} className="relative overflow-hidden bg-navy py-16 text-sand">
-      <div className="pointer-events-none absolute -left-6 top-6 font-display text-[8rem] leading-none text-white/10" aria-hidden>
+      <div className="pointer-events-none absolute right-6 top-2 font-display text-[7rem] leading-none text-white/10" aria-hidden>
         “
       </div>
       <blockquote className="wrap relative max-w-4xl">

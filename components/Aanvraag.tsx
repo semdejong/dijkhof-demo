@@ -9,8 +9,8 @@ export default function Aanvraag({
 }) {
   return (
     <section data-section="aanvraag" className="bg-sand-soft py-16">
-      <div className="wrap grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
+      <div className="wrap grid items-start gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="lg:sticky lg:top-36">
           <h2 className="font-display text-3xl font-extrabold text-navy sm:text-4xl">{title}</h2>
           <p className="mt-4 text-[18px] leading-relaxed">{intro}</p>
           <p className="mt-3 text-[18px] leading-relaxed">

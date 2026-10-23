@@ -44,7 +44,7 @@ export default function SiteFooter() {
                 {contact.email}
               </a>
             </li>
-            <li>Klarenbeek en de Stedendriehoek: {werkgebied.join(", ")}.</li>
+            <li>Werkgebied: {werkgebied.join(", ")} en de Stedendriehoek.</li>
           </ul>
         </div>
       </div>

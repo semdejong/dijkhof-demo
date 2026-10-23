@@ -74,6 +74,7 @@ h1, h2, h3, .font-display {
   padding-inline: 1.25rem;
 }
 
+@layer components {
 .btn {
   display: inline-flex;
   min-height: 44px;
@@ -174,14 +175,6 @@ h1, h2, h3, .font-display {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(22, 36, 91, 0.08);
   }
-
-  @supports (animation-timeline: view()) {
-    main > section:not(:first-of-type) {
-      animation: rise 1s linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 40%;
-    }
-  }
 }
 
 .btn-line-light {
@@ -192,6 +185,7 @@ h1, h2, h3, .font-display {
 
 .btn-line-light:hover {
   background: rgba(255, 255, 255, 0.08);
+}
 }
 
 .photo-strip {
@@ -215,6 +209,22 @@ h1, h2, h3, .font-display {
   border: 1px solid color-mix(in srgb, var(--stone) 80%, var(--navy));
   background: white;
   padding: 0.65rem 0.85rem;
+  font-size: 18px;
   font-weight: 400;
   color: #1c2430;
+}
+
+.photo-rail {
+  position: relative;
+}
+
+.photo-rail::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0.5rem;
+  width: 2.75rem;
+  background: linear-gradient(to right, transparent, var(--rail, #063000));
 }

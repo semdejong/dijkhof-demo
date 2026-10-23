@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { fotosVan } from "@/lib/photos";
 import PhotoStrip from "@/components/PhotoStrip";
 import OfferteLink from "@/components/OfferteLink";
@@ -25,7 +26,7 @@ export default function BestratingBlock() {
           <OfferteLink className="btn btn-sand mt-6">Vrijblijvend kennismaken</OfferteLink>
         </div>
         <Schaal />
-        <div className="mt-8">
+        <div className="photo-rail mt-8" style={{ "--rail": "#063000" } as CSSProperties}>
           <PhotoStrip fotos={fotos} label="Bestratingen van Hoveniersbedrijf G. Dijkhof" />
         </div>
       </div>

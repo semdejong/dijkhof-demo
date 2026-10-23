@@ -23,12 +23,20 @@ export default function SiteHeader() {
         <Link href="/" aria-label="Hoveniersbedrijf G. Dijkhof, naar de homepage" className="shrink-0">
           <Logo labelled={false} className="h-12 w-auto sm:h-14" />
         </Link>
-        <nav className="hidden items-center gap-4 text-[15px] font-semibold text-navy xl:flex" aria-label="Hoofdmenu">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-green-deep">
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-x-4 gap-y-1 text-[15px] font-semibold text-navy xl:flex" aria-label="Hoofdmenu">
+          {nav.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={active ? "text-green-deep underline decoration-2 underline-offset-4" : "hover:text-green-deep"}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="flex items-center gap-2">
           <a href={contact.mobileHref} className="hidden min-h-11 items-center px-2 font-bold text-navy sm:inline-flex">
@@ -43,15 +51,15 @@ export default function SiteHeader() {
             onClick={() => setOpen((value) => !value)}
           >
             <span className="sr-only">{open ? "Menu sluiten" : "Menu openen"}</span>
-            <span aria-hidden className="flex w-5 flex-col gap-1.5">
-              <span className="h-0.5 w-full bg-navy" />
-              <span className="h-0.5 w-full bg-navy" />
-              <span className="h-0.5 w-full bg-navy" />
+            <span aria-hidden className="relative block h-4 w-5">
+              <span className={`absolute left-0 h-0.5 w-full bg-navy ${open ? "top-1.5 rotate-45" : "top-0"}`} />
+              <span className={`absolute left-0 top-1.5 h-0.5 w-full bg-navy ${open ? "opacity-0" : ""}`} />
+              <span className={`absolute left-0 h-0.5 w-full bg-navy ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
             </span>
           </button>
         </div>
       </div>
-      <div className="wrap pb-2">
+      <div className="wrap -mt-1 flex pb-2">
         <SleadsBadge />
       </div>
       <nav
@@ -59,14 +67,21 @@ export default function SiteHeader() {
         aria-label="Mobiel menu"
         className={`${open ? "block" : "hidden"} border-t border-stone/30 bg-[#fffcf7] xl:hidden`}
       >
-        <ul className="wrap flex flex-col gap-1 py-3 pb-6">
-          {nav.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="flex min-h-11 items-center font-semibold text-navy">
-                {item.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="wrap flex flex-col gap-1 py-3 pb-28">
+          {nav.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`flex min-h-11 items-center font-semibold ${active ? "text-green-deep" : "text-navy"}`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
           <li>
             <OfferteLink className="btn btn-primary mt-2 w-full">Vrijblijvend kennismaken</OfferteLink>
           </li>

@@ -74,10 +74,10 @@ export default function KennismakenForm() {
       <fieldset className="grid gap-2">
         <legend className="font-semibold text-navy">Voorkeur voor contact</legend>
         <label className="flex min-h-11 items-center gap-3">
-          <input type="radio" name="voorkeur" value="Bellen" required /> Bellen
+          <input className="size-5 accent-[#3F7414]" type="radio" name="voorkeur" value="Bellen" required /> Bellen
         </label>
         <label className="flex min-h-11 items-center gap-3">
-          <input type="radio" name="voorkeur" value="Mailen" /> Mailen
+          <input className="size-5 accent-[#3F7414]" type="radio" name="voorkeur" value="Mailen" /> Mailen
         </label>
       </fieldset>
       {error ? (
