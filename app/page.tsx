@@ -1,23 +1,31 @@
-import Header from "@/components/sections/Header";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import About from "@/components/sections/About";
-import Reviews from "@/components/sections/Reviews";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
+import Hero from "@/components/home/Hero";
+import Paths from "@/components/home/Paths";
+import Diensten from "@/components/home/Diensten";
+import BestratingBlock from "@/components/home/BestratingBlock";
+import Jaaronderhoud from "@/components/home/Jaaronderhoud";
+import Werkwijze from "@/components/Werkwijze";
+import OnsWerkTeaser from "@/components/home/OnsWerkTeaser";
+import PaardenTeaser from "@/components/home/PaardenTeaser";
+import OverBlock from "@/components/home/OverBlock";
+import Werkgebied from "@/components/home/Werkgebied";
+import Bereikbaarheid from "@/components/home/Bereikbaarheid";
+import Closing from "@/components/home/Closing";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Services />
-        <About />
-        <Reviews />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <Paths />
+      <Diensten />
+      <BestratingBlock />
+      <Jaaronderhoud />
+      <Werkwijze />
+      <OnsWerkTeaser />
+      <PaardenTeaser />
+      <OverBlock />
+      <Werkgebied />
+      <Bereikbaarheid />
+      <Closing />
     </>
   );
 }

@@ -23,6 +23,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/index.php", destination: "/", permanent: false },
+      { source: "/index.php/aanlegtuin", destination: "/tuinaanleg", permanent: false },
+      { source: "/index.php/onderhoud", destination: "/tuinonderhoud", permanent: false },
+      { source: "/index.php/bestratingen", destination: "/bestrating", permanent: false },
+      { source: "/index.php/aanleg-paardenfaciliteiten", destination: "/paardenfaciliteiten", permanent: false },
+      { source: "/index.php/contact", destination: "/contact", permanent: false },
+      { source: "/index.php/:path*", destination: "/", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

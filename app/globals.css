@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #1d4ed8;
+  --brand: #3f7414;
   --brand-fg: #ffffff;
-  --accent: #f59e0b;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f1f5f9;
+  --accent: #569a1c;
+  --background: #fffcf7;
+  --foreground: #16245b;
+  --muted: #f5f1e9;
+  --navy: #16245b;
+  --sand: #d6c6a7;
+  --sand-soft: #f5f1e9;
+  --stone: #a5a6a2;
+  --forest: #063000;
+  --green: #569a1c;
+  --green-deep: #3f7414;
 }
 
 @theme inline {
@@ -16,11 +23,198 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-navy: var(--navy);
+  --color-sand: var(--sand);
+  --color-sand-soft: var(--sand-soft);
+  --color-stone: var(--stone);
+  --color-forest: var(--forest);
+  --color-green: var(--green);
+  --color-green-deep: var(--green-deep);
+  --font-sans: var(--font-source), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-nunito), Nunito, ui-sans-serif, sans-serif;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: #1c2430;
   font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: white;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--green-deep);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #345f10;
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: white;
+}
+
+.btn-navy:hover {
+  background: #0e1840;
+}
+
+.btn-line {
+  border: 2px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+
+.btn-line:hover {
+  background: white;
+}
+
+.btn-sand {
+  background: var(--sand);
+  color: var(--navy);
+}
+
+.btn-sand:hover {
+  background: #e4d6bb;
+}
+
+.visgraat {
+  background-color: #f5f1e9;
+  background-image: url("/visgraat.svg");
+  background-size: 64px 32px;
+}
+
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reveal-wait {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  animation: rise 0.7s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-wait,
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .card-lift {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(22, 36, 91, 0.08);
+  }
+
+  @supports (animation-timeline: view()) {
+    main > section:not(:first-of-type) {
+      animation: rise 1s linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+.btn-line-light {
+  border: 2px solid var(--sand);
+  color: var(--sand);
+  background: transparent;
+}
+
+.btn-line-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.photo-strip {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.photo-strip > * {
+  scroll-snap-align: start;
+  flex: 0 0 min(92vw, 980px);
+  max-width: 980px;
+}
+
+.field {
+  min-height: 44px;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--stone) 80%, var(--navy));
+  background: white;
+  padding: 0.65rem 0.85rem;
+  font-weight: 400;
+  color: #1c2430;
 }
