@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { content } from "@/content";
 import Logo from "@/components/Logo";
+import OfferteLink from "@/components/OfferteLink";
 
 export default function SiteFooter() {
   const { company, nav, contact, werkgebied } = content;
@@ -11,6 +12,7 @@ export default function SiteFooter() {
           <Logo tone="dark" className="h-16 w-auto" />
           <p className="mt-4 text-[17px] text-sand">{company.tagline}</p>
           <p className="mt-1 text-[17px]">{company.city}</p>
+          <OfferteLink className="btn btn-sand mt-5">Vrijblijvend kennismaken</OfferteLink>
         </div>
         <nav aria-label="Footer">
           <p className="font-display text-lg font-extrabold text-white">Pagina&apos;s</p>

@@ -13,10 +13,13 @@ export default function Diensten() {
           </p>
         </SectionHeading>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {diensten.map((dienst) => (
+          {diensten.map((dienst, index) => (
             <li key={dienst.titel}>
               <Link href={dienst.href} className="card-lift block h-full rounded-2xl bg-sand-soft p-5 ring-1 ring-sand">
-                <h3 className="font-display text-xl font-extrabold text-navy">{dienst.titel}</h3>
+                <span className="font-display text-sm font-extrabold tracking-[0.16em] text-green-deep">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 font-display text-xl font-extrabold text-navy">{dienst.titel}</h3>
                 <p className="mt-2 text-[17px] leading-relaxed">{dienst.tekst}</p>
               </Link>
             </li>

@@ -17,6 +17,13 @@ export default function Hero() {
             Hoveniersbedrijf G. Dijkhof heeft meer dan 35 jaar ervaring in tuinontwerp, tuinaanleg, tuinadvies,
             tuinrenovatie, bestratingen en tuinonderhoud, in Klarenbeek en omgeving.
           </p>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {["Meer dan 35 jaar", "Eigen machinepark", "Eigen wagenpark", "Particulier en zakelijk"].map((item) => (
+              <li key={item} className="rounded-full bg-white/80 px-3 py-1 text-[15px] font-bold text-navy ring-1 ring-sand">
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="mt-7 flex flex-wrap gap-3">
             <OfferteLink>Vrijblijvend kennismaken</OfferteLink>
             <a href={contact.mobileHref} className="btn btn-line">

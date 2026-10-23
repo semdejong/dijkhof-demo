@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import OfferteLink from "@/components/OfferteLink";
-import PhotoStrip from "@/components/PhotoStrip";
+import PhotoStack from "@/components/PhotoStack";
 import Aanvraag from "@/components/Aanvraag";
+import PullQuote from "@/components/PullQuote";
 import { seizoenen } from "@/lib/copy";
 import { fotosVan } from "@/lib/photos";
 import { content } from "@/content";
@@ -30,9 +31,9 @@ export default function TuinonderhoudPage() {
         }
       >
         <p>
-          Dankzij jarenlange ervaring onderhouden wij uw tuin op een vakkundige manier. Of het nu gaat over het knippen
-          van hagen, het maaien van het gazon of het snoeien van uw tuin: van een eenmalige onderhoudsbeurt tot het
-          wekelijks bijhouden.
+          Dankzij jarenlange ervaring onderhouden wij uw tuin op een vakkundige manier. Altijd komen we tot een
+          oplossing die bij uw wensen aansluit. Of het nu gaat over het knippen van hagen, het maaien van het gazon of
+          het snoeien van uw tuin.
         </p>
       </PageHero>
 
@@ -47,17 +48,33 @@ export default function TuinonderhoudPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <article className="rounded-3xl bg-navy p-6 text-sand">
+              <h3 className="font-display text-2xl font-extrabold text-white">Particuliere tuinen</h3>
+              <p className="mt-3">
+                Van een eenmalige onderhoudsbeurt tot het wekelijks bijhouden. Wij nemen u graag het werk uit handen.
+              </p>
+            </article>
+            <article className="rounded-3xl bg-sand-soft p-6">
+              <h3 className="font-display text-2xl font-extrabold text-navy">Zakelijke tuinen</h3>
+              <p className="mt-3">
+                Voor zakelijke tuinen verzorgen wij al jaren het onderhoud, op dezelfde vakkundige manier.
+              </p>
+            </article>
+          </div>
           <p className="mt-8 max-w-3xl text-[18px]">
-            Voor zowel zakelijke als particuliere tuinen verzorgen wij al jaren het onderhoud. Voor al uw wensen op het
-            gebied van tuinonderhoud geven wij u graag een advies op maat.
+            Voor al uw wensen op het gebied van tuinonderhoud geven wij u graag een advies op maat.
           </p>
         </div>
       </section>
 
+      <PullQuote quote="Van wintersnoei tot aan de laatste herfstbladeren." source="Jaaronderhoud, om de 4 à 5 weken" />
+
       <section data-section="fotos" className="bg-white py-16">
         <div className="wrap">
-          <h2 className="mb-6 font-display text-3xl font-extrabold text-navy">Onderhoud</h2>
-          <PhotoStrip fotos={fotosVan("onderhoud")} label="Foto's van tuinonderhoud" />
+          <h2 className="font-display text-3xl font-extrabold text-navy">Onderhouden tuinen</h2>
+          <p className="mt-3 mb-8 max-w-3xl">Gazon, hagen, borders en ons eigen wagenpark op locatie.</p>
+          <PhotoStack fotos={fotosVan("onderhoud")} label="Foto's van tuinonderhoud" />
         </div>
       </section>
 

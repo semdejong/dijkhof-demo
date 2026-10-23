@@ -1,6 +1,7 @@
 import { fotosVan } from "@/lib/photos";
 import PhotoStrip from "@/components/PhotoStrip";
 import OfferteLink from "@/components/OfferteLink";
+import Schaal from "@/components/Schaal";
 
 export default function BestratingBlock() {
   const fotos = fotosVan("bestrating").slice(0, 3);
@@ -17,8 +18,13 @@ export default function BestratingBlock() {
             strakke werk. Wij beschikken over een volledig machinepark in eigen beheer om alle soorten bestrating aan te
             leggen.
           </p>
+          <p className="mt-4 text-[18px] leading-relaxed text-sand">
+            Wilt u een mooi pad, een klein of groot terras, of ziet u op tegen de bestrating van uw hele
+            bedrijventerrein? Dan nemen wij u het werk uit handen.
+          </p>
           <OfferteLink className="btn btn-sand mt-6">Vrijblijvend kennismaken</OfferteLink>
         </div>
+        <Schaal />
         <div className="mt-8">
           <PhotoStrip fotos={fotos} label="Bestratingen van Hoveniersbedrijf G. Dijkhof" />
         </div>

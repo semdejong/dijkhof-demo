@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Aanvraag from "@/components/Aanvraag";
+import PullQuote from "@/components/PullQuote";
 import { stappen } from "@/lib/copy";
 import { content } from "@/content";
 
@@ -27,6 +28,10 @@ export default function KennismakenPage() {
           .
         </p>
       </PageHero>
+      <PullQuote
+        quote="U loopt al een tijd rond met plannen voor een nieuwe tuin maar weet niet goed hoe en waar te beginnen?"
+        source="Daarom komen wij vrijblijvend bij u langs."
+      />
       <section data-section="stappen" className="py-14">
         <div className="wrap">
           <h2 className="font-display text-3xl font-extrabold text-navy">Wat u kunt verwachten</h2>

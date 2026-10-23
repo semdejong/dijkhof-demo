@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import OfferteLink from "@/components/OfferteLink";
 import Werkwijze from "@/components/Werkwijze";
-import PhotoStrip from "@/components/PhotoStrip";
+import PhotoStack from "@/components/PhotoStack";
 import FaqList from "@/components/FaqList";
 import Aanvraag from "@/components/Aanvraag";
+import PullQuote from "@/components/PullQuote";
+import Schaal from "@/components/Schaal";
 import { content } from "@/content";
 import { fotosVan } from "@/lib/photos";
 
@@ -16,10 +18,10 @@ export const metadata: Metadata = {
 
 const onderdelen = [
   { titel: "Bestrating", tekst: "Van een klein terrasje tot een groot bedrijventerrein, herkenbaar aan het zeer strakke werk." },
-  { titel: "Vijver", tekst: "Een vijver als onderdeel van de tuin, met beplanting eromheen." },
-  { titel: "Borders", tekst: "Nieuwe borders, afgestemd op de plek en op wat u wilt zien." },
+  { titel: "Vijver", tekst: "Een vijver, met de beplanting eromheen meegenomen in het plan." },
+  { titel: "Borders", tekst: "Nieuwe borders, als onderdeel van de tuin die op de tekentafel ontstaat." },
   { titel: "Beplanting", tekst: "Nieuwe beplanting, zodat de tuin op z'n mooist groeit en bloeit." },
-  { titel: "Complete tuin", tekst: "Een compleet aangelegde tuin, van eerste schets tot laatste tegel." },
+  { titel: "Complete tuin", tekst: "Een compleet aangelegde tuin, van de eerste schets tot de laatste tegel." },
 ];
 
 export default function TuinaanlegPage() {
@@ -80,20 +82,29 @@ export default function TuinaanlegPage() {
 
       <section data-section="fotos" className="py-16">
         <div className="wrap">
-          <h2 className="mb-6 font-display text-3xl font-extrabold text-navy">Aanleg</h2>
-          <PhotoStrip fotos={fotosVan("aanleg")} label="Foto's van tuinaanleg" />
+          <h2 className="font-display text-3xl font-extrabold text-navy">Aangelegde tuinen</h2>
+          <p className="mt-3 mb-8 max-w-3xl text-[18px]">
+            Vijvers, borders, beplanting, gazons en bestrating uit ons eigen werk.
+          </p>
+          <PhotoStack fotos={fotosVan("aanleg")} label="Foto's van tuinaanleg" />
         </div>
       </section>
 
       <section data-section="bestrating" className="bg-forest py-16 text-sand">
-        <div className="wrap max-w-3xl">
-          <h2 className="font-display text-3xl font-extrabold text-white">Bestrating in eigen beheer</h2>
-          <p className="mt-4 text-[18px] leading-relaxed">
+        <div className="wrap">
+          <h2 className="max-w-3xl font-display text-3xl font-extrabold text-white">Bestrating in eigen beheer</h2>
+          <p className="mt-4 max-w-3xl text-[18px] leading-relaxed">
             Bestrating kunnen wij verzorgen van een klein terrasje tot een groot bedrijventerrein. Ook hier herkent u
             ons aan het zeer strakke werk. Wij beschikken over een volledig machinepark in eigen beheer.
           </p>
+          <Schaal />
         </div>
       </section>
+
+      <PullQuote
+        quote="Hierna kunt u de plannen op uw gemak bekijken en bespreken."
+        source="Is het nog niet naar uw zin, dan passen wij het aan."
+      />
 
       <FaqList />
       <Aanvraag />

@@ -3,6 +3,8 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import OfferteLink from "@/components/OfferteLink";
 import Aanvraag from "@/components/Aanvraag";
+import Werkwijze from "@/components/Werkwijze";
+import PullQuote from "@/components/PullQuote";
 import { content } from "@/content";
 
 export const metadata: Metadata = {
@@ -12,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const onderdelen = [
-  { titel: "Paardenbakken", tekst: "Een bak die past bij het gebruik, meegedacht vanuit de paardensport." },
-  { titel: "Omheiningen", tekst: "Omheiningen als onderdeel van de faciliteit rond de bak en het terrein." },
-  { titel: "Stapmolens", tekst: "Een stapmolen, meegenomen in hetzelfde plan." },
+  { nr: "01", titel: "Paardenbakken", tekst: "Wij denken met u mee over de aanleg van de bak." },
+  { nr: "02", titel: "Omheiningen", tekst: "De omheining hoort bij hetzelfde gesprek over de faciliteit." },
+  { nr: "03", titel: "Stapmolens", tekst: "Ook een stapmolen kunnen wij in de aanleg meenemen." },
 ];
 
 export default function PaardenPage() {
@@ -46,7 +48,8 @@ export default function PaardenPage() {
             <ul className="mt-6 grid gap-4">
               {onderdelen.map((item) => (
                 <li key={item.titel} className="rounded-2xl bg-sand-soft p-5">
-                  <h3 className="font-display text-xl font-extrabold text-navy">{item.titel}</h3>
+                  <p className="font-display text-sm font-extrabold tracking-[0.14em] text-green-deep">{item.nr}</p>
+                  <h3 className="mt-1 font-display text-xl font-extrabold text-navy">{item.titel}</h3>
                   <p className="mt-2">{item.tekst}</p>
                 </li>
               ))}
@@ -78,6 +81,11 @@ export default function PaardenPage() {
         </div>
       </section>
 
+      <PullQuote
+        quote="Doordat we zelf al jarenlang actief zijn in en om de paardensport, hebben we gemerkt wat de wensen zijn."
+        source="Paardenbakken, omheiningen en stapmolens"
+      />
+      <Werkwijze heading="Eerst langs, dan een plan" />
       <Aanvraag
         title="Kennismaken over een paardenfaciliteit"
         intro="Wij komen bij u langs om de mogelijkheden te bezien en uw wensen te bespreken."
